@@ -1,0 +1,544 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(135deg, #000000 40%, #8B0000 100%);
+  background-size: cover;
+  min-height: 100vh;
+  color: #bdbdbd;
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+  padding-top: 80px;
+  display: flex;
+  flex-direction: column;
+}
+
+.grimblock-main-content {
+  flex: 1;
+  padding: 1rem;
+}
+
+.grimblock-main-content > * {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.grimblock-main-content > *:nth-child(1) { animation-delay: 0.1s; }
+.grimblock-main-content > *:nth-child(2) { animation-delay: 0.2s; }
+.grimblock-main-content > *:nth-child(3) { animation-delay: 0.3s; }
+.grimblock-main-content > *:nth-child(4) { animation-delay: 0.4s; }
+.grimblock-main-content > *:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes fadeInUp {
+  to {
+   opacity: 1;
+   transform: translateY(0);
+  }
+}
+
+.grimblock-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  border-bottom: 1px solid #8B0000;
+}
+
+.grimblock-logo {
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  font-family: "BBH Sans Hegarty", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  color: #93001ee1;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.grimblock-join-button {
+  padding: clamp(0.6rem, 2vw, 0.8rem) clamp(1rem, 3vw, 1.5rem);
+  background-color: #8B0000;
+  border: 2px solid #000;
+  color: #bdbdbd;
+  outline: none;
+  font-family: "BBH Sans Hegarty", sans-serif;
+  font-weight: normal;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.grimblock-join-button:hover {
+  background: transparent;
+  color: #FF0000;
+  transform: translateY(-2px);
+}
+
+.grimblock-discord-title {
+  font-family: "BBH Sans Hegarty", sans-serif;
+  font-weight: 100;
+  font-size: clamp(2rem, 6vw, 4rem);
+  text-align: center;
+  line-height: 1.2;
+  margin: 2rem 0 3rem 0;
+}
+
+.grimblock-about-section {
+  border: 2px solid transparent;
+  background: linear-gradient(135deg, #000000, #1a0000, #000000);
+  border-radius: 15px;
+  margin: 2rem auto;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  width: 95%;
+  max-width: 800px;
+  box-shadow: 0 0 20px rgba(139, 0, 0, 0.3), 0 0 40px rgba(255, 0, 0, 0.1), inset 0 0 30px rgba(0, 0, 0, 0.8);
+  transition: all 0.5s ease;
+  transform: translateZ(0);
+  position: relative;
+  overflow: hidden;
+}
+
+.grimblock-about-section:hover {
+  box-shadow: 1px 5px 30px #000;
+}
+
+.grimblock-about-title {
+  font-family: "BBH Sans Hegarty", sans-serif;
+  font-weight: normal;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+}
+
+.grimblock-about-description {
+  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+}
+
+.grimblock-highlight {
+  color: red;
+  font-weight: 500;
+}
+
+.grimblock-why-join-section {
+  margin: 4rem auto;
+  padding: 0 1rem;
+  max-width: 1200px;
+}
+
+.grimblock-why-join-title {
+  font-family: "BBH Sans Hegarty", sans-serif;
+  font-weight: normal;
+  text-align: center;
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.grimblock-why-join-subtitle {
+  text-align: center;
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  margin-bottom: 3rem;
+  color: #bdbdbd;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+}
+
+.grimblock-features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.grimblock-feature-card {
+  background: #000;
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid #444;
+  backdrop-filter: blur(10px);
+}
+
+.grimblock-feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  border-color: red;
+}
+
+.grimblock-feature-icon {
+  font-size: 2.5rem;
+  color: red;
+  margin-bottom: 1rem;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grimblock-feature-icon i {
+  transition: transform 0.3s ease;
+}
+
+.grimblock-feature-card:hover .grimblock-feature-icon i {
+  transform: scale(1.1);
+}
+
+.grimblock-feature-title {
+  font-family: "BBH Sans Hegarty", sans-serif;
+  font-weight: normal;
+  font-size: 1.4rem;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.grimblock-feature-description {
+  font-size: 1rem;
+  color: #bdbdbd;
+  line-height: 1.5;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+}
+
+.grimblock-divider {
+  width: 80%;
+  max-width: 500px;
+  margin: 2rem auto;
+  border: none;
+  background: #bdbdbd;
+  height: 1px;
+}
+
+.grimblock-container {
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.grimblock-founder-title, .grimblock-admins-title {
+  font-family: "BBH Sans Hegarty", sans-serif;
+  font-weight: normal;
+  text-align: center;
+  margin: 1.5rem 0;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+}
+
+.grimblock-founders-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0 3rem;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.grimblock-founder-profile {
+  background-color: #23272a;
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.grimblock-founder-profile:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+
+.grimblock-avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 3px solid #7289da;
+  flex-shrink: 0;
+}
+
+.grimblock-user-info {
+  text-align: left;
+  flex: 1;
+}
+
+.grimblock-display-name {
+  font-size: 1.1rem;
+  color: #7289da;
+  margin-bottom: 0.2rem;
+  font-family: 'Arial', sans-serif;
+}
+
+.grimblock-username {
+  font-size: 0.85rem;
+  color: #bdbdbd;
+  font-family: 'Arial', sans-serif;
+  opacity: 0.8;
+}
+
+.grimblock-admins-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.grimblock-admin-profile {
+  background-color: #23272a;
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.grimblock-admin-profile:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+
+.grimblock-admin-avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 3px solid #7289da;
+  flex-shrink: 0;
+}
+
+.grimblock-admin-display-name {
+  font-size: 1.1rem;
+  color: #7289da;
+  margin-bottom: 0.2rem;
+  font-family: 'Arial', sans-serif;
+}
+
+.grimblock-admin-username {
+  font-size: 0.85rem;
+  color: #bdbdbd;
+  font-family: 'Arial', sans-serif;
+  opacity: 0.8;
+}
+
+@keyframes pulse {
+  0% {
+   box-shadow: 0 0 0 0 rgba(114, 137, 218, 0.4);
+  }
+  70% {
+   box-shadow: 0 0 0 10px rgba(114, 137, 218, 0);
+  }
+  100% {
+   box-shadow: 0 0 0 0 rgba(114, 137, 218, 0);
+  }
+}
+
+.grimblock-join-button {
+  animation: pulse 2s infinite;
+}
+
+.grimblock-join-button:hover {
+  animation: none;
+}
+
+.grimblock-footer {
+  background: #000000;
+  border-top: 2px solid #8B0000;
+  padding: 2rem 1rem;
+  margin-top: 4rem;
+}
+
+.grimblock-footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.grimblock-footer-title {
+  font-family: "BBH Sans Hegarty", sans-serif;
+  font-weight: 100;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  color: #bdbdbd;
+  margin-bottom: 0.5rem;
+}
+
+.grimblock-footer-subtitle {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: 1.1rem;
+  color: #bdbdbd;
+  margin-bottom: 2rem;
+}
+
+.grimblock-social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.grimblock-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: #8B0000;
+  border-radius: 50%;
+  color: #bdbdbd;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 1.3rem;
+}
+
+.grimblock-social-link:hover {
+  background: #FF0000;
+  color: #000;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3);
+}
+
+.grimblock-footer-bottom {
+  border-top: 1px solid #333;
+  padding-top: 1.5rem;
+}
+
+.grimblock-copyright {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.9rem;
+  color: #bdbdbd;
+  margin-bottom: 0.5rem;
+}
+
+.grimblock-footer-motto {
+  font-family: "BBH Sans Hegarty", sans-serif;
+  font-weight: 100;
+  font-size: 1rem;
+  color: red;
+  font-style: italic;
+}
+
+@media (min-width: 768px) {
+  body {
+    padding-top: 90px;
+  }
+  .grimblock-header {
+    padding: 1.2rem 3rem;
+  }
+  .grimblock-about-section {
+    width: 85%;
+  }
+  .grimblock-discord-title {
+    margin: 3rem 0 4rem 0;
+  }
+  .grimblock-features-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+  .grimblock-founders-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  .grimblock-admins-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+   }
+}
+
+@media (min-width: 1024px) {
+  body {
+    padding-top: 100px;
+  }
+  .grimblock-header {
+    padding: 1.5rem 4rem;
+  }
+  .grimblock-about-section {
+    width: 75%;
+  }
+  .grimblock-features-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+  .grimblock-founders-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  .grimblock-admins-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+   }
+}
+
+@media (max-width: 480px) {
+  body {
+     padding-top: 70px;
+  }
+  .grimblock-header {
+     padding: 0.8rem 1rem;
+  }
+   .grimblock-about-section {
+      width: 98%;
+      padding: 1rem;
+    }
+  .grimblock-founders-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .grimblock-founder-profile {
+     width: 98%;
+     padding: 1rem;
+     flex-direction: column;
+     text-align: center;
+     gap: 1rem;
+  }
+  .grimblock-user-info {
+     text-align: center;
+  }
+  .grimblock-discord-title {
+     margin: 1rem 0 2rem 0;
+  }
+  .grimblock-feature-card {
+     padding: 1.5rem 1rem;
+  }
+  .grimblock-feature-icon {
+    font-size: 2rem;
+    height: 60px;
+  }
+  .grimblock-admin-profile {
+     flex-direction: column;
+     text-align: center;
+     gap: 0.8rem;
+     padding: 1.2rem;
+  }
+  .grimblock-admin-avatar {
+     width: 60px;
+     height: 60px;
+  }
+  .grimblock-social-icons {
+    gap: 1rem;
+  }
+  .grimblock-social-link {
+    width: 45px;
+    height: 45px;
+    font-size: 1.1rem;
+  }
+}
